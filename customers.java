@@ -15,7 +15,7 @@ public class customers {
 
 	 @Id
 		@GeneratedValue(strategy=GenerationType.AUTO)
-		private long id;
+		private int id;
 		@Column(length=10)
 		private int product_id,phone; 
 		private String name, email, productname,address,username, password;
