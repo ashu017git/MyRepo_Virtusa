@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Product Manager</title>
+</head>
+<body bgcolor="cyan">
+<div align="center">
+    <h1>Product List</h1>
+    <a href="new">Create New Product</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>pid</th>
+                <th>pname</th>
+                <th>price</th>
+                <th>manufacture_date</th>
+                <th>expiry_date</th>
+                <th>manufacturing_company</th>
+                <th>stock</th>
+                
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="product : ${listProducts}">
+            	<td th:text="${product.pid}">pid</td>
+                <td th:text="${product.pname}">pname</td>
+                <td th:text="${product.price}">price</td>
+                <td th:text="${product.manufacture_date}">manufacture_date</td>
+                <td th:text="${product.expiry_date}">expiry_date</td>
+                <td th:text="${product.manufacturing_company}">manufacturing_company</td>
+                <td th:text="${product.stock}">stock</td>
+                
+                <td>
+                	<a th:href="@{'/edit/' + ${product.pid}}">Edit</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/delete/' + ${product.pid}}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>

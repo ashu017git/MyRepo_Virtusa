@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Create New Product</title>
+</head>
+<body bgcolor="green">
+	<div align="center">
+		<h1>Create New Product</h1>
+		<br />
+		<form action="#" th:action="@{/save}" th:object="${product}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>pname:</td>
+					<td><input type="text" th:field="*{pname}" /></td>
+				</tr>
+				<tr>
+					<td>price:</td>
+					<td><input type="number" th:field="*{price}" /></td>
+				</tr>
+				<tr>
+					<td>manufacture_date:</td>
+					<td><input type="date" th:field="*{manufacture_date}" /></td>
+				</tr>
+				<tr>
+					<td>expiry_date</td>
+					<td><input type="date" th:field="*{expiry_date}" /></td>
+				</tr>	
+				<tr>
+					<td>manufacturing_company</td>
+					<td><input type="text" th:field="*{manufacturing_company}" /></td>
+				</tr>
+				<tr>
+					<td>stock</td>
+					<td><input type="number" th:field="*{stock}" /></td>
+				</tr>
+				<tr>
+				
+					<td colspan="2"><button type="submit">Save</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>
