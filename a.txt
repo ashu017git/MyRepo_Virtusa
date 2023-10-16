@@ -1,0 +1,2 @@
+new java file
+int a=1000;
